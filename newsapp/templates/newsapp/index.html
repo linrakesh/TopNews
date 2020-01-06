@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>newsapp</title>
-</head>
-<body>
-    <h1>This is news app by rakesh</h1>
-    {% for article in data %}
-        <p>{{article.articles}}</p>
-    {% endfor %}
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>newsapp</title>
+    </head>
+
+    <body>
+        <h1>This is news app by rakesh</h1>
+        <hr />
+        {% for name, author, title, desc, url, img, pubat, content in data %}
+        <p>Name : {{name}} , Author :{{author}}</p>
+        <h3>{{title}}</h3>
+        <img src="{{img}}" alt="">
+        <p>{{content|linebreaks}}</p>
+        <a href="{{url}}"></a>
+        {% endfor %}
+    </body>
+
 </html>
