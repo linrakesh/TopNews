@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,23 +7,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
         <title>newsapp</title>
     </head>
 
     <body>
-        <h1>This is news app by rakesh</h1>
-        <hr />
-        {% for name, author, title, desc, url, img, pubat, content in data %}
-        <p>Name : {{name}} , Author :{{author}}</p>
-        <h3>{{title}}</h3>
-        <img src="{{img}}" alt="">
-        <p>{{content|linebreaks}}</p>
-        <a href="{{url}}"></a>
-        {% endfor %}
-
+        <div id="branding">
+            <div class="container">
+                <h1>Top News</h1>
+            </div>
+        </div>
+        <div class="container">
+            {% for name, author, title, desc, url, img, pubat, content in data %}
+            <div class="card">
+                <p>Origin: {{name}}</p>
+                <h3>{{title}}</h3>
+                <img class="responsive" src="{{img}}" alt="">
+                <p>{{desc|linebreaks}}</p>
+                <a href="{{ url }}"></a>
+            </div>
+            {% endfor %}
+        </div>
         <div id="footer">
             <div class="content">
-                <p>made by : rakesh kumar at <a href="https://binarynote.com" target="_blank"></a></p>
+                <p>made by : rakesh kumar at <a href="https://binarynote.com" target="_blank">Binarynote.com</a></p>
             </div>
         </div>
     </body>

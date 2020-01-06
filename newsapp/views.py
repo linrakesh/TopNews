@@ -13,7 +13,7 @@ def index(request):
     author = []
     title = []
     desc = []
-    url = []
+    urls = []
     img = []
     pubat = []
     content = []
@@ -22,7 +22,7 @@ def index(request):
         author.append(article['author'])
         title.append(article['title'])
         desc.append(article['description'])
-        url.append(article['url'])
+        urls.append(article['url'])
         img.append(article['urlToImage'])
         pubat.append(article['publishedAt'])
         content.append(article['content'])
@@ -34,5 +34,5 @@ def index(request):
         # print(article['urlToImage'])
         # print(article['publishedAt'])
         # print(article['content'])
-        post = zip(name, author, title, desc, url, img, pubat, content)
+        post = zip(name, author, title, desc, urls, img, pubat, content)
     return render(request, 'newsapp/index.html', {'data': post})
