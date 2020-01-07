@@ -13,6 +13,7 @@
     <body>
         <div id="branding">
             <div class="container">
+<<<<<<< HEAD
                 <div class="logo">
                     <a href="{% url 'index' country_name='in' %}"><h1>The News<span style="color:red;font-size:10px;">{{country}}</span></h1></a>
                 </div>
@@ -25,6 +26,9 @@
                        <li><a href="http://">India</a> </li>
                    </ul>
                </div>
+=======
+                <h1>Top News<span style="font-size:9px;color:red;">India</span></h1>
+>>>>>>> 5deb04c6a80a7b3d262731d573f2ed96bae1549c
             </div>
         </div>
         <div class="container">
@@ -35,7 +39,11 @@
                 <img class="responsive" src="{{img}}" alt="">
                 <p>Origin: {{name}}</p>
                 <p>{{desc|linebreaks}}</p>
+<<<<<<< HEAD
                 <a href="{{ url }}" target="_blank">Read More</a>
+=======
+                <a href="{{ url }}">Read More...</a>
+>>>>>>> 5deb04c6a80a7b3d262731d573f2ed96bae1549c
             </div>
             {% endfor %}
         </div>
