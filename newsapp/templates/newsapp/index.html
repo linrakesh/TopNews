@@ -20,9 +20,10 @@
         <div class="container">
             {% for name, author, title, desc, url, img, pubat, content in data %}
             <div class="card">
-                <p>Origin: {{name}}</p>
+
                 <h3>{{title}}</h3>
                 <img class="responsive" src="{{img}}" alt="">
+                <p>Origin: {{name}}</p>
                 <p>{{desc|linebreaks}}</p>
                 <a href="{{ url }}">Read More...</a>
             </div>
