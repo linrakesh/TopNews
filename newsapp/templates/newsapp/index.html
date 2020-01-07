@@ -14,7 +14,7 @@
     <body>
         <div id="branding">
             <div class="container">
-                <h1>Top News</h1>
+                <h1>Top News<span style="font-size:9px;color:red;">India</span></h1>
             </div>
         </div>
         <div class="container">
@@ -24,7 +24,7 @@
                 <h3>{{title}}</h3>
                 <img class="responsive" src="{{img}}" alt="">
                 <p>{{desc|linebreaks}}</p>
-                <a href="{{ url }}"></a>
+                <a href="{{ url }}">Read More...</a>
             </div>
             {% endfor %}
         </div>
