@@ -5,8 +5,11 @@ import json
 # Create your views here.
 
 
-def index(request):
-    url = ('https://newsapi.org/v2/top-headlines?' 'country=in&' 'apiKey=2121032f088e4370affe13ca317f8d1a')
+def index(request,country_name):
+    if country_name=='':
+        country_name='in'
+        
+    url = ('https://newsapi.org/v2/top-headlines?country='+ country_name +'&pagesize=24&apiKey=2121032f088e4370affe13ca317f8d1a')
     response = requests.get(url)
     data = json.loads(response.text)
     name = []
@@ -35,4 +38,4 @@ def index(request):
         # print(article['publishedAt'])
         # print(article['content'])
         post = zip(name, author, title, desc, urls, img, pubat, content)
-    return render(request, 'newsapp/index.html', {'data': post})
+    return render(request, 'newsapp/index.html', {'data': post,'country':country_name})
