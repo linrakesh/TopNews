@@ -37,6 +37,7 @@ def home(request):
         # print(article['publishedAt'])
         # print(article['content'])
         post = zip(name, author, title, desc, urls, img, pubat, content)
+        
     return render(request, 'newsapp/index.html', {'data': post, 'country': country_name})
 
 
@@ -74,4 +75,5 @@ def index(request, country_name):
         # print(article['publishedAt'])
         # print(article['content'])
         post = zip(name, author, title, desc, urls, img, pubat, content)
+
     return render(request, 'newsapp/index.html', {'data': post, 'country': country_name})

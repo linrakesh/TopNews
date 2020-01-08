@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <title>News at This moment</title>
     </head>
@@ -31,17 +32,8 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            {% for name, author, title, desc, url, img, pubat, content in data %}
-            <div class="card">
-                <h3>{{title}}</h3>
-                <img class="responsive" src="{{img}}" alt="">
-                <p>Origin: {{name}}</p>
-                <p>{{desc|linebreaks}}</p>
-                <a href="{{ url }}" target="_blank">Read More</a>
-            </div>
-            {% endfor %}
-        </div>
+        {% block content %}
+        {% endblock content %}
         <div id="footer">
             <div class="content">
                 <p>made by : rakesh kumar at <a href="https://binarynote.com" target="_blank">Binarynote.com</a></p>

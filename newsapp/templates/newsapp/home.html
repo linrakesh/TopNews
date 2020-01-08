@@ -1,0 +1,15 @@
+{% extends 'newsapp/base.html' %}
+{% load static %}
+    {% block content %}
+    <div class="container">
+        {% for name, author, title, desc, url, img, pubat, content in data %}
+        <div class="card">
+            <h3>{{title}}</h3>
+            <img class="responsive" src="{% if img %} {{ img }} {% else %} {%static 'images/default.jpg' %} {% endif %}"  alt="{{ img }}">
+            <p class="origin">Origin: {{name}}</p>
+            <p>{{desc|linebreaks}}</p>
+            <a href="{{ url }}" target="_blank">Read More</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock content %}
